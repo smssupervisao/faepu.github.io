@@ -1,4 +1,4 @@
-<!-- BLOCO 1: ABA INÍCIO / DESTAQUE (800x400) -->
+<!-- BLOCO 1: ABA INÍCIO / DESTAQUE (1092x500) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -9,9 +9,9 @@
     
     .faepu-box {
         width: 100%;
-        max-width: 800px;
-        height: 400px;
-        padding: 20px;
+        max-width: 1092px;
+        height: 500px;
+        padding: 36px 40px;
         background: linear-gradient(135deg, #003366 0%, #00529b 60%, #0077b6 100%);
         color: #ffffff;
         border-radius: 12px;
@@ -21,16 +21,16 @@
         position: relative;
         overflow: hidden;
         margin: 0 auto;
-        box-shadow: 0 4px 15px rgba(0,51,102,0.15);
+        box-shadow: 0 4px 20px rgba(0,51,102,0.15);
     }
 
     .faepu-box::after {
         content: '';
         position: absolute;
-        right: -60px;
-        bottom: -60px;
-        width: 250px;
-        height: 250px;
+        right: -80px;
+        bottom: -80px;
+        width: 350px;
+        height: 350px;
         background: rgba(255, 255, 255, 0.06);
         border-radius: 50%;
         pointer-events: none;
@@ -39,11 +39,11 @@
     .faepu-badge {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
         background: rgba(255, 255, 255, 0.18);
-        padding: 5px 12px;
+        padding: 6px 16px;
         border-radius: 20px;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-weight: 700;
         letter-spacing: 0.5px;
         text-transform: uppercase;
@@ -52,49 +52,50 @@
     }
 
     .faepu-title {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
         font-weight: 800;
-        line-height: 1.25;
-        margin-top: 10px;
+        line-height: 1.2;
+        margin-top: 16px;
     }
 
     .faepu-subtitle {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         opacity: 0.9;
         font-weight: 300;
-        margin-top: 6px;
-        line-height: 1.4;
+        margin-top: 10px;
+        max-width: 850px;
+        line-height: 1.5;
     }
 
     .faepu-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 20px;
         background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(8px);
-        padding: 12px;
-        border-radius: 10px;
+        padding: 20px;
+        border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .stat-item { text-align: center; }
-    .stat-item h4 { font-size: 1.1rem; font-weight: 800; color: #ffffff; }
-    .stat-item p { font-size: 0.7rem; opacity: 0.85; font-weight: 500; }
+    .stat-item h4 { font-size: 1.6rem; font-weight: 800; color: #ffffff; }
+    .stat-item p { font-size: 0.85rem; opacity: 0.9; font-weight: 500; }
 
     .faepu-actions {
         display: flex;
-        gap: 10px;
+        gap: 14px;
     }
 
     .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        padding: 10px 18px;
-        border-radius: 6px;
+        gap: 10px;
+        padding: 12px 24px;
+        border-radius: 8px;
         font-weight: 700;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.2s;
     }
@@ -104,10 +105,10 @@
     .btn-outline { background: rgba(255, 255, 255, 0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
     .btn-outline:hover { background: rgba(255, 255, 255, 0.25); }
 
-    @media (max-width: 500px) {
-        .faepu-title { font-size: 1.25rem; }
-        .faepu-subtitle { font-size: 0.8rem; }
-        .faepu-stats { grid-template-columns: 1fr; gap: 5px; }
+    @media (max-width: 768px) {
+        .faepu-title { font-size: 1.6rem; }
+        .faepu-subtitle { font-size: 0.95rem; }
+        .faepu-stats { grid-template-columns: 1fr; gap: 10px; }
     }
 </style>
 
@@ -117,7 +118,7 @@
             <i class="fa-solid fa-graduation-cap"></i> FAEPU Ensino & Pesquisa
         </div>
         <h1 class="faepu-title">Plataforma Integrada de Capacitação Profissional</h1>
-        <p class="faepu-subtitle">Desenvolvimento contínuo em saúde, gestão e inovação tecnológica com a excelência da Fundação FAEPU.</p>
+        <p class="faepu-subtitle">Desenvolvimento contínuo em saúde, gestão e inovação tecnológica com a excelência e tradição da Fundação FAEPU.</p>
     </div>
 
     <div class="faepu-stats">
