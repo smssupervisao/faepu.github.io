@@ -1,0 +1,552 @@
+<!-- =========================================================
+     FAEPU - ABA CENTRAL HOME PARA PLATAFORMA DE CURSOS
+     ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    .faepu-embed-container * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .faepu-embed-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 15px;
+        background-color: #f8fafc;
+        color: #1e293b;
+        line-height: 1.6;
+    }
+
+    /* BANNER HERO */
+    .faepu-hero {
+        background: linear-gradient(135deg, #003366 0%, #00529b 60%, #0077b6 100%);
+        border-radius: 16px;
+        padding: 40px 30px;
+        color: #ffffff;
+        box-shadow: 0 10px 25px -5px rgba(0, 51, 102, 0.25);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .faepu-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .faepu-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 750px;
+    }
+
+    .faepu-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .faepu-hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 14px;
+        letter-spacing: -0.5px;
+    }
+
+    .faepu-hero p {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        opacity: 0.9;
+        margin-bottom: 24px;
+        font-weight: 300;
+    }
+
+    .faepu-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .faepu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        cursor: pointer;
+        border: none;
+    }
+
+    .faepu-btn-primary {
+        background-color: #00a896;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 168, 150, 0.3);
+    }
+
+    .faepu-btn-primary:hover {
+        background-color: #028090;
+        transform: translateY(-2px);
+    }
+
+    .faepu-btn-outline {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .faepu-btn-outline:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* CARDS DE ESTATÍSTICAS */
+    .faepu-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .faepu-stat-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        transition: transform 0.2s ease;
+    }
+
+    .faepu-stat-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .faepu-stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: #eef6ff;
+        color: #00529b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .faepu-stat-info h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.1;
+    }
+
+    .faepu-stat-info p {
+        font-size: 0.825rem;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    /* SEÇÕES DE CONTEÚDO */
+    .faepu-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e2e8f0;
+    }
+
+    .faepu-section-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #003366;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .faepu-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 22px;
+        background-color: #00a896;
+        border-radius: 2px;
+    }
+
+    /* GRID DE CURSOS */
+    .faepu-courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 22px;
+        margin-bottom: 40px;
+    }
+
+    .faepu-course-card {
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+    }
+
+    .faepu-course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .faepu-card-header {
+        height: 120px;
+        padding: 15px;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .faepu-card-header-bg-1 { background: linear-gradient(135deg, #0f4c81, #1b2a4a); }
+    .faepu-card-header-bg-2 { background: linear-gradient(135deg, #0077b6, #00a896); }
+    .faepu-card-header-bg-3 { background: linear-gradient(135deg, #2b2d42, #8d99ae); }
+
+    .faepu-category-tag {
+        background: rgba(255, 255, 255, 0.9);
+        color: #003366;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+    }
+
+    .faepu-card-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .faepu-course-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 10px;
+    }
+
+    .faepu-course-desc {
+        font-size: 0.85rem;
+        color: #64748b;
+        margin-bottom: 18px;
+        flex-grow: 1;
+    }
+
+    .faepu-course-meta {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 12px;
+        border-top: 1px solid #f1f5f9;
+        font-size: 0.8rem;
+        color: #64748b;
+    }
+
+    .faepu-card-footer {
+        padding: 12px 20px 20px 20px;
+    }
+
+    .faepu-btn-block {
+        width: 100%;
+        text-align: center;
+        background-color: #eef6ff;
+        color: #00529b;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-decoration: none;
+        display: block;
+        transition: all 0.2s ease;
+    }
+
+    .faepu-btn-block:hover {
+        background-color: #00529b;
+        color: #ffffff;
+    }
+
+    /* GRID INFORMATIVO E LINKS */
+    .faepu-info-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 22px;
+        margin-bottom: 30px;
+    }
+
+    .faepu-notice-box, .faepu-quick-links {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 22px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .faepu-notice-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #f1f5f9;
+        display: flex;
+        gap: 15px;
+    }
+
+    .faepu-notice-item:last-child { border-bottom: none; }
+
+    .faepu-notice-date {
+        background: #f1f5f9;
+        color: #003366;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-align: center;
+        min-width: 60px;
+    }
+
+    .faepu-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .faepu-link-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        background: #f8fafc;
+        border-radius: 8px;
+        color: #334155;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.875rem;
+        border: 1px solid #f1f5f9;
+        transition: all 0.2s;
+    }
+
+    .faepu-link-item:hover {
+        background: #003366;
+        color: #ffffff;
+    }
+
+    .faepu-footer-note {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.825rem;
+        color: #64748b;
+        gap: 15px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 850px) {
+        .faepu-info-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+        .faepu-hero { padding: 25px 20px; }
+        .faepu-hero-actions { flex-direction: column; }
+        .faepu-btn { width: 100%; }
+        .faepu-stats-grid { grid-template-columns: 1fr; }
+        .faepu-footer-note { flex-direction: column; text-align: center; }
+    }
+</style>
+
+<div class="faepu-embed-container">
+    
+    <!-- BANNER DE BOAS-VINDAS -->
+    <section class="faepu-hero">
+        <div class="faepu-hero-content">
+            <span class="faepu-badge">
+                <i class="fa-solid fa-graduation-cap"></i> FAEPU Ensino & Pesquisa
+            </span>
+            <h1>Plataforma Integrada de Capacitação Profissional</h1>
+            <p>Desenvolvimento contínuo em saúde, gestão e inovação tecnológica com a excelência e tradição da Fundação FAEPU.</p>
+            <div class="faepu-hero-actions">
+                <a href="#cursos" class="faepu-btn faepu-btn-primary">
+                    <i class="fa-solid fa-book-open"></i> Explorar Cursos
+                </a>
+                <a href="https://www.faepu.org.br" target="_blank" rel="noopener" class="faepu-btn faepu-btn-outline">
+                    <i class="fa-solid fa-globe"></i> Portal FAEPU Oficial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDICADORES / ESTATÍSTICAS -->
+    <section class="faepu-stats-grid">
+        <div class="faepu-stat-card">
+            <div class="faepu-stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <div class="faepu-stat-info">
+                <h3>+15.000</h3>
+                <p>Alunos Capacitados</p>
+            </div>
+        </div>
+        <div class="faepu-stat-card">
+            <div class="faepu-stat-icon" style="background: #e6f8f5; color: #00a896;"><i class="fa-solid fa-certificate"></i></div>
+            <div class="faepu-stat-info">
+                <h3>100%</h3>
+                <p>Certificação Válida</p>
+            </div>
+        </div>
+        <div class="faepu-stat-card">
+            <div class="faepu-stat-icon" style="background: #fef3c7; color: #d97706;"><i class="fa-solid fa-hospital-user"></i></div>
+            <div class="faepu-stat-info">
+                <h3>Saúde & Gestão</h3>
+                <p>Foco Institucional</p>
+            </div>
+        </div>
+        <div class="faepu-stat-card">
+            <div class="faepu-stat-icon" style="background: #f3e8ff; color: #7e22ce;"><i class="fa-solid fa-clock"></i></div>
+            <div class="faepu-stat-info">
+                <h3>24/7</h3>
+                <p>Acesso Flexível</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURSOS EM DESTAQUE -->
+    <section id="cursos" style="margin-bottom: 35px;">
+        <div class="faepu-section-header">
+            <h2 class="faepu-section-title">Cursos em Destaque</h2>
+        </div>
+
+        <div class="faepu-courses-grid">
+            <div class="faepu-course-card">
+                <div class="faepu-card-header faepu-card-header-bg-1">
+                    <span class="faepu-category-tag">Saúde & Hospitalar</span>
+                </div>
+                <div class="faepu-card-body">
+                    <h3 class="faepu-course-title">Gestão Hospitalar e SUS</h3>
+                    <p class="faepu-course-desc">Capacitação avançada em rotinas assistenciais, regulação e boas práticas em serviços de saúde.</p>
+                    <div class="faepu-course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 60 horas</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Intermediário</span>
+                    </div>
+                </div>
+                <div class="faepu-card-footer">
+                    <a href="#" class="faepu-btn-block">Acessar Curso</a>
+                </div>
+            </div>
+
+            <div class="faepu-course-card">
+                <div class="faepu-card-header faepu-card-header-bg-2">
+                    <span class="faepu-category-tag">Enfermagem</span>
+                </div>
+                <div class="faepu-card-body">
+                    <h3 class="faepu-course-title">Biossegurança & Protocolos Clínicos</h3>
+                    <p class="faepu-course-desc">Treinamento sobre normas de biossegurança e controle de infecção no ambiente assistencial.</p>
+                    <div class="faepu-course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 40 horas</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Essencial</span>
+                    </div>
+                </div>
+                <div class="faepu-card-footer">
+                    <a href="#" class="faepu-btn-block">Acessar Curso</a>
+                </div>
+            </div>
+
+            <div class="faepu-course-card">
+                <div class="faepu-card-header faepu-card-header-bg-3">
+                    <span class="faepu-category-tag">Administrativo</span>
+                </div>
+                <div class="faepu-card-body">
+                    <h3 class="faepu-course-title">Gestão de Processos na Saúde</h3>
+                    <p class="faepu-course-desc">Metodologias ágeis e controle de processos aplicados a instituições e projetos de saúde.</p>
+                    <div class="faepu-course-meta">
+                        <span><i class="fa-regular fa-clock"></i> 80 horas</span>
+                        <span><i class="fa-solid fa-layer-group"></i> Avançado</span>
+                    </div>
+                </div>
+                <div class="faepu-card-footer">
+                    <a href="#" class="faepu-btn-block">Acessar Curso</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMATIVOS E LINKS -->
+    <section class="faepu-info-grid">
+        <div class="faepu-notice-box">
+            <div class="faepu-section-header" style="margin-bottom: 15px;">
+                <h3 class="faepu-section-title" style="font-size: 1.1rem;">Avisos & Comunicados</h3>
+            </div>
+            <div class="faepu-notice-item">
+                <div class="faepu-notice-date"><span>JUL</span><br><strong>25</strong></div>
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 600;">Processos Seletivos e Capacitações</h4>
+                    <p style="font-size: 0.825rem; color: #64748b;">Acompanhe os editais e novas turmas abertas diretamente no portal da Fundação.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faepu-quick-links">
+            <div class="faepu-section-header" style="margin-bottom: 15px;">
+                <h3 class="faepu-section-title" style="font-size: 1.1rem;">Acesso Rápido</h3>
+            </div>
+            <div class="faepu-links-list">
+                <a href="https://www.faepu.org.br" target="_blank" class="faepu-link-item">
+                    <span><i class="fa-solid fa-building-columns"></i> Portal FAEPU</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                </a>
+                <a href="#" class="faepu-link-item">
+                    <span><i class="fa-solid fa-headset"></i> Suporte Acadêmico</span>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="faepu-footer-note">
+        <div>
+            <i class="fa-solid fa-shield-halved" style="color: #00a896; margin-right: 6px;"></i>
+            <strong>FAEPU</strong> — Fundação de Assistência, Estudo e Pesquisa de Uberlândia
+        </div>
+        <div>© 2026 FAEPU. Todos os direitos reservados.</div>
+    </footer>
+
+</div>
